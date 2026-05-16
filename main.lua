@@ -4,7 +4,11 @@ function love.load()
 	player.y = 200
 end
 
-function love.update(dt) end
+function love.update(dt)
+	if love.keyboard.isDown("right") then
+		player.x = player.x + 1
+	end
+end
 
 function love.draw()
 	love.graphics.circle("fill", player.x, player.y, 100)
