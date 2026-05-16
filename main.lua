@@ -1,9 +1,14 @@
-function love.load()
-	player = {}
-	player.x = 400
-	player.y = 200
-	player.speed = 1
-end
+---@diagnostic disable: undefined-global
+---@meta
+local love = _G.love
+
+local player = {
+	x = 400,
+	y = 200,
+	speed = 1,
+}
+
+function love.load() end
 
 function love.update(dt)
 	if love.keyboard.isDown("right") then
