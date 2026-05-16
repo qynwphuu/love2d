@@ -8,6 +8,10 @@ function love.update(dt)
 	if love.keyboard.isDown("right") then
 		player.x = player.x + 1
 	end
+
+	if love.keyboard.isDown("left") then
+		player.x = player.x - 1
+	end
 end
 
 function love.draw()
