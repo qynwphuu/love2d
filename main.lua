@@ -16,13 +16,16 @@ local player = {
 local background = nil
 
 function love.load()
+	-- Load libraries
 	anim8 = require("libraries/anim8")
 	love.graphics.setDefaultFilter("nearest", "nearest")
 
+	-- Load images
 	background = love.graphics.newImage("sprites/background.png")
 	player.sprite = love.graphics.newImage("sprites/smaller-char-sprites/character_green_idle.png")
 	player.spriteSheet = love.graphics.newImage("sprites/spritesheet.png")
 
+	-- Load animations
 	player.grid = anim8.newGrid(128, 128, 1152, 128)
 	player.animations.walk = anim8.newAnimation(player.grid("2-3", 1), 0.2)
 	player.animations.idle = anim8.newAnimation(player.grid(1, 1), 0.2)
@@ -46,7 +49,7 @@ function love.update(dt)
 	end
 
 	if love.keyboard.isDown("left") and love.keyboard.isDown("right") then
-		player.anim = player.animations.idle
+		isMoving = false
 	end
 
 	if love.keyboard.isDown("down") then
@@ -62,7 +65,7 @@ function love.update(dt)
 	end
 
 	if love.keyboard.isDown("down") and love.keyboard.isDown("up") then
-		player.anim = player.animations.idle
+		isMoving = false
 	end
 
 	if isMoving == false then
