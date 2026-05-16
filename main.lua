@@ -25,29 +25,53 @@ function love.load()
 
 	player.grid = anim8.newGrid(128, 128, 1152, 128)
 	player.animations.walk = anim8.newAnimation(player.grid("2-3", 1), 0.2)
+	player.animations.idle = anim8.newAnimation(player.grid(1, 1), 0.2)
+
+	player.anim = player.animations.walk
 end
 
 function love.update(dt)
+	local isMoving = false
+
 	if love.keyboard.isDown("right") then
 		player.x = player.x + player.speed
+		player.anim = player.animations.walk
+		isMoving = true
 	end
 
 	if love.keyboard.isDown("left") then
 		player.x = player.x - player.speed
+		player.anim = player.animations.walk
+		isMoving = true
+	end
+
+	if love.keyboard.isDown("left") and love.keyboard.isDown("right") then
+		player.anim = player.animations.idle
 	end
 
 	if love.keyboard.isDown("down") then
 		player.y = player.y + player.speed
+		player.anim = player.animations.walk
+		isMoving = true
 	end
 
 	if love.keyboard.isDown("up") then
 		player.y = player.y - player.speed
+		player.anim = player.animations.walk
+		isMoving = true
 	end
 
-	player.animations.walk:update(dt)
+	if love.keyboard.isDown("down") and love.keyboard.isDown("up") then
+		player.anim = player.animations.idle
+	end
+
+	if isMoving == false then
+		player.anim = player.animations.idle
+	end
+	player.anim:update(dt)
 end
 
 function love.draw()
 	love.graphics.draw(background, 0, 0)
-	player.animations.walk:draw(player.spriteSheet, player.x, player.y)
+	player.anim:draw(player.spriteSheet, player.x, player.y)
 end
