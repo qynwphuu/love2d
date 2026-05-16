@@ -6,7 +6,10 @@ local player = {
 	x = 400,
 	y = 200,
 	speed = 1,
+	sprite = love.graphics.newImage("sprites/character_green_idle.png"),
 }
+
+local background = love.graphics.newImage("sprites/background.png")
 
 function love.load() end
 
@@ -29,5 +32,6 @@ function love.update(dt)
 end
 
 function love.draw()
-	love.graphics.circle("fill", player.x, player.y, 100)
+	love.graphics.draw(background, 0, 0)
+	love.graphics.draw(player.sprite, player.x, player.y)
 end
