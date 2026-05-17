@@ -1,8 +1,9 @@
 ## About
 
-**Little Planet RPG** is a charming, retro-inspired 2D top-down adventure game built using the Love2D framework. Players control an adorable alien explorer navigating a beautifully crafted pixel-art village. Built with precise pixel alignment, modular tileset rendering, and smooth camera tracking that locks perfectly to the map boundaries, the game offers a cozy and classic handheld gaming aesthetic.
+**Little Planet RPG** is a cozy, retro-style 2D top-down adventure game built with the Love2D framework. You play as a small alien explorer wandering through a pixel-art village — think classic handheld RPG vibes, but with a bit more charm.
 
-The project focuses on implementing robust game development fundamentals, including dynamic sprite animation sheet handling, embedded orthogonal map integration via Tiled (STI), and custom camera interpolation to deliver a seamless, immersive exploring experience.
+On the technical side, the project is built around a few core systems: sprite animation sheets, Tiled map integration using the STI library, and a camera that smoothly follows the player while staying within the map boundaries. The pixel rendering is handled carefully to keep everything crisp and aligned, which matters a lot for this kind of art style.
+It's primarily a learning-driven project focused on nailing the fundamentals of 2D game development — tile-based maps, animation state management, and camera behavior rather than shipping a full game. The result is a small but solid foundation that captures that classic top-down RPG feel.
 
 ---
 
