@@ -3,8 +3,8 @@
 local love = _G.love
 
 local player = {
-	x = 400,
-	y = 200,
+	x = 103,
+	y = 50,
 	speed = 0.3,
 
 	sprite = nil,
