@@ -82,6 +82,14 @@ function love.update(dt)
 	gameMap:update(dt)
 
 	cam:lookAt(player.x, player.y)
+
+	local w = love.graphics.getWidth()
+	local h = love.graphics.getHeight()
+
+	-- Hide left border
+	if cam.x < (w / 2) / 4 then
+		cam.x = (w / 2) / 4
+	end
 end
 
 function love.draw()
