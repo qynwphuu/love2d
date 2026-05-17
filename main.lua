@@ -119,5 +119,5 @@ function love.draw()
 
 	player.anim:draw(player.spriteSheet, player.x, player.y, 0, 0.18, 0.18, 64, 64)
 	cam:detach()
-	love.graphics.print("Hello!")
+	love.graphics.print("Hello!", 10, 10)
 end
