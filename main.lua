@@ -86,6 +86,9 @@ function love.update(dt)
 	local w = love.graphics.getWidth()
 	local h = love.graphics.getHeight()
 
+	local mapW = gameMap.width * gameMap.tilewidth
+	local mapH = gameMap.height * gameMap.tileheight
+
 	-- Hide left border
 	if cam.x < (w / 2) / 4 then
 		cam.x = (w / 2) / 4
@@ -94,6 +97,16 @@ function love.update(dt)
 	-- Hide upper border
 	if cam.y < (h / 2) / 4 then
 		cam.y = (h / 2) / 4
+	end
+
+	-- Hide right border
+	if cam.x > mapW - (w / 2) / 4 then
+		cam.x = mapW - (w / 2) / 4
+	end
+
+	-- Hide bottom border
+	if cam.y > mapH - (h / 2) / 4 then
+		cam.y = mapH - (h / 2) / 4
 	end
 end
 
