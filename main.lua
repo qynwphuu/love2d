@@ -82,7 +82,11 @@ end
 
 function love.draw()
 	cam:attach()
-	gameMap:draw(0, 0, 2, 2)
+	gameMap:drawLayer(gameMap.layers["Tile Layer 1"])
+	gameMap:drawLayer(gameMap.layers["Trees"])
+	gameMap:drawLayer(gameMap.layers["Fences"])
+	gameMap:drawLayer(gameMap.layers["House"])
+
 	player.anim:draw(player.spriteSheet, player.x, player.y, 0, 0.45, 0.45)
 	cam:detach()
 end
