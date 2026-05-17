@@ -117,6 +117,7 @@ function love.draw()
 	gameMap:drawLayer(gameMap.layers["Fences"])
 	gameMap:drawLayer(gameMap.layers["House"])
 
-	player.anim:draw(player.spriteSheet, player.x, player.y, 0, 0.2, 0.2, 64, 64)
+	player.anim:draw(player.spriteSheet, player.x, player.y, 0, 0.18, 0.18, 64, 64)
 	cam:detach()
+	love.graphics.print("Hello!")
 end
