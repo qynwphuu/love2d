@@ -90,6 +90,11 @@ function love.update(dt)
 	if cam.x < (w / 2) / 4 then
 		cam.x = (w / 2) / 4
 	end
+
+	-- Hide upper border
+	if cam.y < (h / 2) / 4 then
+		cam.y = (h / 2) / 4
+	end
 end
 
 function love.draw()
