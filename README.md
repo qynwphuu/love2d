@@ -51,4 +51,10 @@ love .
 
 ### Controls
 
-* **Arrow Keys / WASD:** Move the character around the map.
+ **Arrow Keys / WASD:** Move the character around the map.
+
+---
+
+## Credits
+> - Assets by [Kenney](https://kenney.nl) (CC0)
+> - Libraries: STI, camera.lua (hump), anim8 — all MIT licensed
