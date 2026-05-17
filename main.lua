@@ -5,7 +5,7 @@ local love = _G.love
 local player = {
 	x = 400,
 	y = 200,
-	speed = 0.5,
+	speed = 0.3,
 
 	sprite = nil,
 	spriteSheet = nil,
@@ -91,6 +91,6 @@ function love.draw()
 	gameMap:drawLayer(gameMap.layers["Fences"])
 	gameMap:drawLayer(gameMap.layers["House"])
 
-	player.anim:draw(player.spriteSheet, player.x, player.y, 0, 0.17, 0.17)
+	player.anim:draw(player.spriteSheet, player.x, player.y, 0, 0.2, 0.2, 64, 64)
 	cam:detach()
 end
