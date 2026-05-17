@@ -17,6 +17,8 @@ local background = nil
 
 function love.load()
 	-- Load libraries
+	camera = require("libraries/camera")
+	cam = camera()
 	anim8 = require("libraries/anim8")
 
 	sti = require("libraries/sti")
@@ -79,6 +81,8 @@ function love.update(dt)
 end
 
 function love.draw()
+	cam:attach()
 	gameMap:draw(0, 0, 2, 2)
 	player.anim:draw(player.spriteSheet, player.x, player.y, 0, 0.45, 0.45)
+	cam:detach()
 end
