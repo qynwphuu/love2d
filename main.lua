@@ -40,8 +40,8 @@ function love.load()
 end
 
 function love.update(dt)
+	-- MOVEMENTS
 	local isMoving = false
-
 	if love.keyboard.isDown("right") then
 		player.x = player.x + player.speed
 		player.anim = player.animations.walk
@@ -83,6 +83,7 @@ function love.update(dt)
 
 	cam:lookAt(player.x, player.y)
 
+	-- CAMERA
 	local w = love.graphics.getWidth()
 	local h = love.graphics.getHeight()
 
