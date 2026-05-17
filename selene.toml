@@ -1,0 +1,4 @@
+# selene.toml
+ignore_paths = [
+    "libraries/**"
+]

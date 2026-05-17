@@ -2,5 +2,6 @@
     "Lua.diagnostics.disable": [
         "undefined-field",
         "unused-local"
-    ]
+    ],
+    "stylua.targetReleaseVersion": "latest"
 }

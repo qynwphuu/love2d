@@ -1,4 +1,4 @@
----@diagnostic disable: undefined-global
+---@diagnostic disable: undefined-global, undefined-variable
 ---@meta
 local love = _G.love
 
@@ -18,7 +18,9 @@ local background = nil
 function love.load()
 	-- Load libraries
 	anim8 = require("libraries/anim8")
-	love.graphics.setDefaultFilter("nearest", "nearest")
+
+	sti = require("libraries/sti")
+	gameMap = sti("maps/testmap.lua")
 
 	-- Load images
 	background = love.graphics.newImage("sprites/background.png")
@@ -71,10 +73,12 @@ function love.update(dt)
 	if isMoving == false then
 		player.anim = player.animations.idle
 	end
+
 	player.anim:update(dt)
+	gameMap:update(dt)
 end
 
 function love.draw()
-	love.graphics.draw(background, 0, 0)
-	player.anim:draw(player.spriteSheet, player.x, player.y)
+	gameMap:draw(0, 0, 2, 2)
+	player.anim:draw(player.spriteSheet, player.x, player.y, 0, 0.45, 0.45)
 end
