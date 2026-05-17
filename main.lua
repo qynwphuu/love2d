@@ -5,7 +5,7 @@ local love = _G.love
 local player = {
 	x = 400,
 	y = 200,
-	speed = 1.2,
+	speed = 0.5,
 
 	sprite = nil,
 	spriteSheet = nil,
@@ -35,6 +35,8 @@ function love.load()
 	player.animations.idle = anim8.newAnimation(player.grid(1, 1), 0.2)
 
 	player.anim = player.animations.walk
+
+	cam:zoom(4)
 end
 
 function love.update(dt)
@@ -78,6 +80,8 @@ function love.update(dt)
 
 	player.anim:update(dt)
 	gameMap:update(dt)
+
+	cam:lookAt(player.x, player.y)
 end
 
 function love.draw()
@@ -87,6 +91,6 @@ function love.draw()
 	gameMap:drawLayer(gameMap.layers["Fences"])
 	gameMap:drawLayer(gameMap.layers["House"])
 
-	player.anim:draw(player.spriteSheet, player.x, player.y, 0, 0.45, 0.45)
+	player.anim:draw(player.spriteSheet, player.x, player.y, 0, 0.17, 0.17)
 	cam:detach()
 end
