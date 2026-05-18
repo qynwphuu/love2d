@@ -168,7 +168,6 @@ function love.draw()
 	gameMap:drawLayer(gameMap.layers["Tile Layer 1"])
 
 	if player.y < 128 then
-		-- Vẽ nhân vật trước, rồi vẽ nhà đè lên đầu nhân vật (Chuẩn)
 		player.anim:draw(player.spriteSheet, player.x, player.y - 2.8, 0, 0.18, 0.18, 64, 64)
 		gameMap:drawLayer(gameMap.layers["Trees"])
 		gameMap:drawLayer(gameMap.layers["Fences"])
@@ -178,9 +177,9 @@ function love.draw()
 		gameMap:drawLayer(gameMap.layers["Fences"])
 		gameMap:drawLayer(gameMap.layers["House"])
 		player.anim:draw(player.spriteSheet, player.x, player.y - 2.8, 0, 0.18, 0.18, 64, 64)
-		-- world:draw()
 	end
 
+	-- world:draw()
 	cam:detach()
 
 	love.graphics.print("Hello!", 10, 10)
