@@ -5,7 +5,7 @@ local love = _G.love
 local player = {
 	x = 103,
 	y = 50,
-	speed = 0.3,
+	speed = 100,
 
 	sprite = nil,
 	spriteSheet = nil,
@@ -40,7 +40,7 @@ function love.load()
 	player.animations.idle = anim8.newAnimation(player.grid(1, 1), 0.2)
 	player.anim = player.animations.walk
 
-	player.collider = world:newBSGRectangleCollider(103, 50, 18, 24, 2)
+	player.collider = world:newBSGRectangleCollider(103, 50, 18, 20, 2)
 	player.collider:setFixedRotation(true)
 
 	cam:zoom(4)
@@ -135,7 +135,7 @@ function love.draw()
 	gameMap:drawLayer(gameMap.layers["Trees"])
 	gameMap:drawLayer(gameMap.layers["Fences"])
 	gameMap:drawLayer(gameMap.layers["House"])
-	player.anim:draw(player.spriteSheet, player.x, player.y, 0, 0.18, 0.18, 64, 64)
+	player.anim:draw(player.spriteSheet, player.x, player.y - 2.8, 0, 0.18, 0.18, 64, 64)
 	world:draw()
 	cam:detach()
 
