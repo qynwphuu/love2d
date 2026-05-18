@@ -55,13 +55,27 @@ function love.load()
 		wall:setType("static")
 	end
 
-	wall = {}
+	walls = {}
 	if gameMap.layers["Walls"] then
 		for i, obj in pairs(gameMap.layers["Walls"].objects) do
-			if obj.width > 0 and obj.height > 0 then
-				local wall = world:newRectangleCollider(obj.x, obj.y, obj.width, obj.height)
-				wall:setType("static")
-				table.insert(wall, w)
+			if obj.polygon then
+				local vertices = {}
+				for _, point in ipairs(obj.polygon) do
+					-- Calculate the absolute position of each vertex
+					table.insert(vertices, obj.x + (point.x - obj.polygon[1].x))
+					table.insert(vertices, obj.y + (point.y - obj.polygon[1].y))
+				end
+
+				-- Create collider polygon
+				local w = world:newPolygonCollider(vertices)
+				w:setType("static")
+				table.insert(walls, w)
+
+			-- Create rectangle colliders
+			elseif obj.width > 0 and obj.height > 0 then
+				local w = world:newRectangleCollider(obj.x, obj.y, obj.width, obj.height)
+				w:setType("static")
+				table.insert(walls, w)
 			end
 		end
 	end
