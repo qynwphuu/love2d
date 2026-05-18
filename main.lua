@@ -43,16 +43,27 @@ function love.load()
 	player.collider = world:newBSGRectangleCollider(103, 50, 18, 20, 2)
 	player.collider:setFixedRotation(true)
 
+	-- Load walls collision
+	local function createWallFromTiles(xStart, yStart, xEnd, yEnd)
+		local x = xStart * 16
+		local y = yStart * 16
+
+		local width = (xEnd - xStart + 1) * 16
+		local height = (yEnd - yStart + 1) * 16
+
+		local wall = world:newRectangleCollider(x, y, width, height)
+		wall:setType("static")
+	end
+
+	createWallFromTiles(13, 6, 16, 8)
 	cam:zoom(4)
 end
 
 function love.update(dt)
 	-- MOVEMENTS
 	local isMoving = false
-
 	local vx = 0
 	local vy = 0
-
 	if love.keyboard.isDown("right") then
 		vx = player.speed
 		player.anim = player.animations.walk
