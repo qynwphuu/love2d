@@ -11,6 +11,8 @@ local player = {
 	spriteSheet = nil,
 	grid = nil,
 	animations = {},
+
+	collider = nil,
 }
 
 local background = nil
@@ -36,8 +38,10 @@ function love.load()
 	player.grid = anim8.newGrid(128, 128, 1152, 128)
 	player.animations.walk = anim8.newAnimation(player.grid("2-3", 1), 0.2)
 	player.animations.idle = anim8.newAnimation(player.grid(1, 1), 0.2)
-
 	player.anim = player.animations.walk
+
+	player.collider = world:newBSGRectangleCollider(400, 250, 20, 24, 4)
+	player.collider:setFixedRotation(true)
 
 	cam:zoom(4)
 end
@@ -81,6 +85,8 @@ function love.update(dt)
 		player.anim = player.animations.idle
 	end
 
+	world:update(dt)
+
 	player.anim:update(dt)
 	gameMap:update(dt)
 
@@ -120,8 +126,9 @@ function love.draw()
 	gameMap:drawLayer(gameMap.layers["Trees"])
 	gameMap:drawLayer(gameMap.layers["Fences"])
 	gameMap:drawLayer(gameMap.layers["House"])
-
 	player.anim:draw(player.spriteSheet, player.x, player.y, 0, 0.18, 0.18, 64, 64)
+	world:draw()
 	cam:detach()
+
 	love.graphics.print("Hello!", 10, 10)
 end
