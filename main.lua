@@ -40,7 +40,7 @@ function love.load()
 	player.animations.idle = anim8.newAnimation(player.grid(1, 1), 0.2)
 	player.anim = player.animations.walk
 
-	player.collider = world:newBSGRectangleCollider(400, 250, 20, 24, 4)
+	player.collider = world:newBSGRectangleCollider(103, 50, 18, 24, 2)
 	player.collider:setFixedRotation(true)
 
 	cam:zoom(4)
@@ -91,6 +91,9 @@ function love.update(dt)
 	gameMap:update(dt)
 
 	cam:lookAt(player.x, player.y)
+
+	player.x = player.collider:getX()
+	player.y = player.collider:getY()
 
 	-- CAMERA
 	local w = love.graphics.getWidth()
