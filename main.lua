@@ -49,14 +49,18 @@ end
 function love.update(dt)
 	-- MOVEMENTS
 	local isMoving = false
+
+	local vx = 0
+	local vy = 0
+
 	if love.keyboard.isDown("right") then
-		player.x = player.x + player.speed
+		vx = player.speed
 		player.anim = player.animations.walk
 		isMoving = true
 	end
 
 	if love.keyboard.isDown("left") then
-		player.x = player.x - player.speed
+		vx = player.speed * -1
 		player.anim = player.animations.walk
 		isMoving = true
 	end
@@ -66,13 +70,13 @@ function love.update(dt)
 	end
 
 	if love.keyboard.isDown("down") then
-		player.y = player.y + player.speed
+		vy = player.speed
 		player.anim = player.animations.walk
 		isMoving = true
 	end
 
 	if love.keyboard.isDown("up") then
-		player.y = player.y - player.speed
+		vy = player.speed * -1
 		player.anim = player.animations.walk
 		isMoving = true
 	end
@@ -84,6 +88,8 @@ function love.update(dt)
 	if isMoving == false then
 		player.anim = player.animations.idle
 	end
+
+	player.collider:setLinearVelocity(vx, vy)
 
 	world:update(dt)
 
