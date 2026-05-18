@@ -40,7 +40,7 @@ function love.load()
 	player.animations.idle = anim8.newAnimation(player.grid(1, 1), 0.2)
 	player.anim = player.animations.walk
 
-	player.collider = world:newBSGRectangleCollider(103, 50, 18, 20, 2)
+	player.collider = world:newBSGRectangleCollider(103, 50, 16, 18, 2)
 	player.collider:setFixedRotation(true)
 
 	-- Load walls collision
@@ -55,7 +55,16 @@ function love.load()
 		wall:setType("static")
 	end
 
-	createWallFromTiles(13, 6, 16, 8)
+	wall = {}
+	if gameMap.layers["Walls"] then
+		for i, obj in pairs(gameMap.layers["Walls"].objects) do
+			if obj.width > 0 and obj.height > 0 then
+				local wall = world:newRectangleCollider(obj.x, obj.y, obj.width, obj.height)
+				wall:setType("static")
+				table.insert(wall, w)
+			end
+		end
+	end
 	cam:zoom(4)
 end
 
