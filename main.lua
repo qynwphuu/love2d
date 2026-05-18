@@ -173,10 +173,10 @@ function love.draw()
 		gameMap:drawLayer(gameMap.layers["Fences"])
 		gameMap:drawLayer(gameMap.layers["House"])
 	else
-		gameMap:drawLayer(gameMap.layers["Trees"])
-		gameMap:drawLayer(gameMap.layers["Fences"])
 		gameMap:drawLayer(gameMap.layers["House"])
 		player.anim:draw(player.spriteSheet, player.x, player.y - 2.8, 0, 0.18, 0.18, 64, 64)
+		gameMap:drawLayer(gameMap.layers["Trees"])
+		gameMap:drawLayer(gameMap.layers["Fences"])
 	end
 
 	-- world:draw()
