@@ -64,4 +64,4 @@ love .
 
 ## Credits
 > - Assets by [Kenney](https://kenney.nl) (CC0)
-> - Libraries: STI, camera.lua (hump), anim8 — all MIT licensed
+> - Libraries: STI, camera.lua (hump), anim8, windfield — all MIT licensed
