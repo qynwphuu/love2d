@@ -10,7 +10,7 @@ return {
   tilewidth = 16,
   tileheight = 16,
   nextlayerid = 6,
-  nextobjectid = 67,
+  nextobjectid = 73,
   properties = {},
   tilesets = {
     {
@@ -248,20 +248,6 @@ return {
       properties = {},
       objects = {
         {
-          id = 2,
-          name = "",
-          type = "",
-          shape = "rectangle",
-          x = 208,
-          y = 96,
-          width = 64,
-          height = 48,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {}
-        },
-        {
           id = 3,
           name = "",
           type = "",
@@ -438,20 +424,6 @@ return {
           y = 256,
           width = 16,
           height = 16,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 27,
-          name = "",
-          type = "",
-          shape = "rectangle",
-          x = 64,
-          y = 272,
-          width = 16,
-          height = 32,
           rotation = 0,
           opacity = 1,
           visible = true,
@@ -738,20 +710,6 @@ return {
           properties = {}
         },
         {
-          id = 56,
-          name = "",
-          type = "",
-          shape = "rectangle",
-          x = 48,
-          y = 192,
-          width = 32,
-          height = 32,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {}
-        },
-        {
           id = 57,
           name = "",
           type = "",
@@ -791,47 +749,6 @@ return {
           rotation = 0,
           opacity = 1,
           visible = true,
-          properties = {}
-        },
-        {
-          id = 62,
-          name = "",
-          type = "",
-          shape = "polygon",
-          x = 224,
-          y = 320,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          polygon = {
-            { x = 0, y = 0 },
-            { x = 48, y = -48 },
-            { x = 96, y = -16 },
-            { x = 96, y = 0 }
-          },
-          properties = {}
-        },
-        {
-          id = 63,
-          name = "",
-          type = "",
-          shape = "polygon",
-          x = 320,
-          y = 304,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          polygon = {
-            { x = 0, y = 0 },
-            { x = 32, y = -48 },
-            { x = 48, y = -48 },
-            { x = 112, y = 16 },
-            { x = 0, y = 16 }
-          },
           properties = {}
         },
         {
@@ -877,6 +794,92 @@ return {
           y = 272,
           width = 48,
           height = 48,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 67,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 48,
+          y = 208,
+          width = 32,
+          height = 16,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 69,
+          name = "",
+          type = "",
+          shape = "polygon",
+          x = 224,
+          y = 320,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          polygon = {
+            { x = 0, y = 0 },
+            { x = 48, y = -48 },
+            { x = 80, y = -16 },
+            { x = 96, y = -16 },
+            { x = 96, y = 0 }
+          },
+          properties = {}
+        },
+        {
+          id = 70,
+          name = "",
+          type = "",
+          shape = "polygon",
+          x = 320,
+          y = 304,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          polygon = {
+            { x = 0, y = 0 },
+            { x = 16, y = -16 },
+            { x = 16, y = -32 },
+            { x = 32, y = -48 },
+            { x = 48, y = -48 },
+            { x = 112, y = 16 },
+            { x = 0, y = 16 }
+          },
+          properties = {}
+        },
+        {
+          id = 71,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 208,
+          y = 112,
+          width = 64,
+          height = 32,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 72,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 64,
+          y = 288,
+          width = 16,
+          height = 16,
           rotation = 0,
           opacity = 1,
           visible = true,
