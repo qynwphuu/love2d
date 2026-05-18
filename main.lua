@@ -170,7 +170,7 @@ function love.draw()
 	gameMap:drawLayer(gameMap.layers["Trees"])
 	gameMap:drawLayer(gameMap.layers["Fences"])
 	gameMap:drawLayer(gameMap.layers["House"])
-	world:draw()
+	-- world:draw()
 	cam:detach()
 
 	love.graphics.print("Hello!", 10, 10)
