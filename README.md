@@ -19,6 +19,12 @@ Before running the game, ensure you have **Love2D** installed on your system.
 
 #### Windows
 
+#### Using VS Code (Recommended for Development)
+1. Open the project folder in Visual Studio Code.
+2. Make sure you have the Love2D Support extension installed.
+3. Press Alt + L to launch the game instantly.
+
+#### Running via Love2D Executable
 1. Clone or download this repository to your local machine.
 2. Select all the files inside the project root folder (including `main.lua`, `conf.lua`, `libraries/`, `maps/`, and `sprites/`).
 3. Drag and drop the selected files directly onto your `love.exe` shortcut or application window.
@@ -28,6 +34,7 @@ Before running the game, ensure you have **Love2D** installed on your system.
 love .
 
 ```
+*(Note: Requires love to be added to your system's PATH)*
 
 
 
@@ -57,4 +64,4 @@ love .
 
 ## Credits
 > - Assets by [Kenney](https://kenney.nl) (CC0)
-> - Libraries: STI, camera.lua (hump), anim8 — all MIT licensed
+> - Libraries: STI, camera.lua (hump), anim8, windfield — all MIT licensed
