@@ -65,3 +65,7 @@ love .
 ## Credits
 > - Assets by [Kenney](https://kenney.nl) (CC0)
 > - Libraries: STI, camera.lua (hump), anim8, windfield — all MIT licensed
+> - BGM: "Devonshire Waltz Allegretto" Kevin MacLeod (incompetech.com)
+Licensed under Creative Commons: By Attribution 4.0 License
+http://creativecommons.org/licenses/by/4.0/
+> - SFX: bfxr - https://www.bfxr.net/
