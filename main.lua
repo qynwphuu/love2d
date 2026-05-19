@@ -17,6 +17,8 @@ local player = {
 
 local background = nil
 
+local sounds = {}
+
 function love.load()
 	-- Load libraries
 	wf = require("libraries/windfield")
@@ -28,6 +30,10 @@ function love.load()
 
 	sti = require("libraries/sti")
 	gameMap = sti("maps/testmap.lua")
+
+	-- Load sounds
+	sounds.footstep = love.audio.newSource("sounds/footstep.wav", "static")
+	sounds.music = love.audio.newSource("sounds/bgm.mp3", "stream")
 
 	-- Load images
 	background = love.graphics.newImage("sprites/background.png")
