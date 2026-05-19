@@ -34,6 +34,7 @@ function love.load()
 	-- Load sounds
 	sounds.footstep = love.audio.newSource("sounds/footstep.wav", "static")
 	sounds.music = love.audio.newSource("sounds/bgm.mp3", "stream")
+	sounds.music:play()
 
 	-- Load images
 	background = love.graphics.newImage("sprites/background.png")
@@ -140,6 +141,10 @@ function love.update(dt)
 
 	player.x = player.collider:getX()
 	player.y = player.collider:getY()
+
+	if isMoving == true then
+		sounds.footstep:play()
+	end
 
 	-- CAMERA
 	local w = love.graphics.getWidth()
