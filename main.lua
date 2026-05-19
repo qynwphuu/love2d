@@ -34,6 +34,9 @@ function love.load()
 	-- Load sounds
 	sounds.footstep = love.audio.newSource("sounds/footstep.wav", "static")
 	sounds.music = love.audio.newSource("sounds/bgm.mp3", "stream")
+
+	sounds.music:setLooping(true)
+	sounds.music:setVolume(0.5)
 	sounds.music:play()
 
 	-- Load images
