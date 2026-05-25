@@ -129,6 +129,15 @@ function love.update(dt)
 		isMoving = false
 	end
 
+	if vx == 0 and vy == 0 then
+		isMoving = false
+	end
+
+	if vx ~= 0 and vy ~= 0 then
+		vx = vx * 0.7071
+		vy = vy * 0.7071
+	end
+
 	if isMoving == false then
 		player.anim = player.animations.idle
 	end
